@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(router);
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static('dist', __dirname + '/dist'));
 
 var server = app.listen(3000, function () {
 
@@ -25,7 +25,7 @@ var server = app.listen(3000, function () {
 });
 
 router.get('/', function (req, res) {
-  res.sendfile('index.html');
+  res.sendfile('dist/index.html');
 });
 
 router.get('/data', function (req, res) {
