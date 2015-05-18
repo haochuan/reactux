@@ -9,7 +9,10 @@
   "author": "haochuan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "flux": "^2.0.3",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3"
   },
   "devDependencies": {
     "browserify": "^9.0.8",
