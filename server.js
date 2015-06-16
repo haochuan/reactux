@@ -24,8 +24,9 @@ var server = app.listen(3000, function() {
 
 });
 
-router.get('/', function(req, res) {
-    res.sendfile('dist/index.html');
+
+router.get('/', function (req, res) {
+  res.sendfile('dist/index.html');
 });
 
 router.get('/data', function(req, res) {
