@@ -6,6 +6,7 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var reactify = require('reactify');
 var streamify = require('gulp-streamify');
+var babelify = require('babelify');
 
 var path = {
   HTML: 'src/index.html',
@@ -14,7 +15,7 @@ var path = {
   DEST: 'dist',
   DEST_BUILD: 'dist/build',
   DEST_SRC: 'dist/src',
-  ENTRY_POINT: './src/js/App.jsx'
+  ENTRY_POINT: './src/js/App.js'
 };
 
 gulp.task('copy', function(){
@@ -46,8 +47,10 @@ gulp.task('watch', function() {
 gulp.task('build', function(){
   browserify({
     entries: [path.ENTRY_POINT],
-    transform: [reactify],
+    extensions: ['.js'],
+    debug: true
   })
+    .transform(babelify)
     .bundle()
     .pipe(source(path.MINIFIED_OUT))
     .pipe(streamify(uglify(path.MINIFIED_OUT)))
