@@ -13,8 +13,8 @@
     "body-parser": "^1.12.4",
     "events": "^1.0.2",
     "express": "^4.12.3",
-    "flux": "^2.0.3",
     "keymirror": "^0.1.1",
+    "nuclear-js": "^1.1.1",
     "object-assign": "^2.0.0",
     "react": "^0.13.3"
   },
