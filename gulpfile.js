@@ -10,13 +10,13 @@ var buffer = require('vinyl-buffer');
 
 var path = {
     HTML: 'src/index.html',
-    ALL: ['src/js/*.js', 'src/js/**/*.js', 'src/index.html'],
+    ALL: ['src/*.js', 'src/**/*.js', 'src/index.html'],
     MINIFIED_OUT: 'app.min.js',
     OUT: 'app.js',
     DEST: 'dist',
     DEST_BUILD: 'dist/build/',
     DEST_SRC: 'dist/src/',
-    ENTRY_POINT: './src/js/App.js'
+    ENTRY_POINT: './src/App.js'
 };
 
 
