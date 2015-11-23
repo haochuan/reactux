@@ -6,11 +6,14 @@ var watchify = require('watchify');
 var htmlreplace = require('gulp-html-replace');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
+var sass = require('gulp-sass');
 
 
 var path = {
     HTML: 'src/index.html',
-    ALL: ['src/*.js', 'src/**/*.js', 'src/index.html'],
+    SASS: 'src/sass/main.scss',
+    CSS_OUT: 'dist/style',
+    ALL: ['src/*.js', 'src/**/*.js', 'src/index.html', 'src/sass/**/*.scss'],
     MINIFIED_OUT: 'app.min.js',
     OUT: 'app.js',
     DEST: 'dist',
@@ -24,6 +27,12 @@ var path = {
 gulp.task('copy', function() {
     gulp.src(path.HTML)
         .pipe(gulp.dest(path.DEST));
+});
+
+gulp.task('sass', function() {
+    gulp.src(path.SASS)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(path.CSS_OUT));
 });
 
 // Replace the src path in <scipt> tag inside index.html
@@ -55,7 +64,7 @@ gulp.task('compile', function() {
 
 // Watch the changes
 gulp.task('watch', function() {
-    gulp.watch(path.ALL, ['compile', 'copy']);
+    gulp.watch(path.ALL, ['sass', 'compile', 'copy']);
 });
 
 // Build the min.js for production
@@ -75,4 +84,4 @@ gulp.task('build', function() {
 
 // Register Tasks
 gulp.task('default', ['watch']);
-gulp.task('production', ['replaceHTML', 'build']);
+gulp.task('production', ['replaceHTML', 'sass', 'build']);

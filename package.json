@@ -23,6 +23,7 @@
   "devDependencies": {
     "browserify": "^9.0.8",
     "gulp": "^3.8.11",
+    "gulp-sass": "^2.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-html-replace": "^1.4.4",
     "gulp-react": "^3.0.1",
