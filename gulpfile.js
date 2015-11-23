@@ -43,10 +43,14 @@ gulp.task('compile', function() {
             entries: [path.ENTRY_POINT],
             extensions: ['.js'],
         })
-        .transform(babelify)
-        .bundle()
-        .pipe(source(path.OUT))
-        .pipe(gulp.dest(path.DEST_SRC));
+    .transform(babelify)
+    .bundle()
+    .on('error', function(err) {
+        console.log(err.message);
+        this.emit('end');
+    })
+    .pipe(source(path.OUT))
+    .pipe(gulp.dest(path.DEST_SRC));
 });
 
 // Watch the changes
