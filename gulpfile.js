@@ -29,9 +29,10 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(path.DEST));
 });
 
+
 gulp.task('sass', function() {
     gulp.src(path.SASS)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest(path.CSS_OUT));
 });
 
