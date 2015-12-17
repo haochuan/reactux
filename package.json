@@ -1,8 +1,8 @@
 {
-  "name": "reactGenerator",
+  "name": "startreact",
   "version": "1.0.0",
   "description": "react start template",
-  "main": "reactGenerator.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
     "url": "https://github.com/haochuan/react-start/issues"
   },
   "bin": {
-    "reactGenerator": "./bin/reactGenerator.js"
+    "startreact": "./bin/reactGenerator.js"
   },
   "homepage": "https://github.com/haochuan/react-start#readme",
   "dependencies": {
