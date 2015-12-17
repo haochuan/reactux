@@ -1,5 +1,5 @@
 {
-  "name": "react-template",
+  "name": "reactGenerator",
   "version": "1.0.0",
   "description": "react start template",
   "main": "reactGenerator.js",
