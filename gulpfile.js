@@ -12,13 +12,13 @@ var sass = require('gulp-sass');
 var path = {
     HTML: 'src/index.html',
     SASS: 'src/sass/main.scss',
-    CSS_OUT: 'dist/style',
     ALL: ['src/*.js', 'src/**/*.js', 'src/index.html', 'src/sass/**/*.scss'],
     MINIFIED_OUT: 'app.min.js',
+    MINIFIED_CSS: 'main.css',
     OUT: 'app.js',
     DEST: 'dist',
     DEST_BUILD: 'dist/build/',
-    DEST_SRC: 'dist/src/',
+    DEST_DEV: 'dist/dev/',
     ENTRY_POINT: './src/App.js'
 };
 
@@ -30,10 +30,16 @@ gulp.task('copy', function() {
 });
 
 
-gulp.task('sass', function() {
+gulp.task('sass_dev', function() {
+    gulp.src(path.SASS)
+        .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+        .pipe(gulp.dest(path.DEST_DEV));
+});
+
+gulp.task('sass_build', function() {
     gulp.src(path.SASS)
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(path.CSS_OUT));
+        .pipe(gulp.dest(path.DEST_BUILD));
 });
 
 // Replace the src path in <scipt> tag inside index.html
@@ -42,7 +48,8 @@ gulp.task('sass', function() {
 gulp.task('replaceHTML', function() {
     gulp.src(path.HTML)
         .pipe(htmlreplace({
-            'js': 'build/' + path.MINIFIED_OUT
+            'js': 'build/' + path.MINIFIED_OUT,
+            'css': 'build/' + path.MINIFIED_CSS
         }))
         .pipe(gulp.dest(path.DEST));
 });
@@ -60,12 +67,12 @@ gulp.task('compile', function() {
         this.emit('end');
     })
     .pipe(source(path.OUT))
-    .pipe(gulp.dest(path.DEST_SRC));
+    .pipe(gulp.dest(path.DEST_DEV));
 });
 
 // Watch the changes
 gulp.task('watch', function() {
-    gulp.watch(path.ALL, ['sass', 'compile', 'copy']);
+    gulp.watch(path.ALL, ['sass_dev', 'compile', 'copy']);
 });
 
 // Build the min.js for production
@@ -85,4 +92,4 @@ gulp.task('build', function() {
 
 // Register Tasks
 gulp.task('default', ['watch']);
-gulp.task('production', ['replaceHTML', 'sass', 'build']);
+gulp.task('production', ['replaceHTML', 'sass_build', 'build']);
