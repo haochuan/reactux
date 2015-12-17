@@ -21,6 +21,7 @@
   "homepage": "https://github.com/haochuan/react-start#readme",
   "dependencies": {
     "bluebird": "^3.1.1",
+    "commander": "^2.9.0",
     "fs-extra": "^0.26.3"
   }
 }
