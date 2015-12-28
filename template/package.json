@@ -14,6 +14,7 @@
     "cors": "^2.7.1",
     "events": "^1.0.2",
     "express": "^4.12.3",
+    "express-http-proxy": "^0.6.0",
     "gulp-uglify": "^1.4.2",
     "keymirror": "^0.1.1",
     "morgan": "^1.6.1",

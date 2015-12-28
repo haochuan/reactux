@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
+var express    = require('express');
+var app        = express();
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+var morgan     = require('morgan');
+var proxy      = require('express-http-proxy');
 
-var port = process.env.PORT || 3000;
+var port       = process.env.PORT || 3000;
 
 var router = express.Router({
     caseSensitive: app.get('case sensitive routing'),
@@ -12,6 +13,19 @@ var router = express.Router({
 
 // Parse application/json
 app.use(bodyParser.json());
+
+/*=============================
+=            PROXY            =
+=============================*/
+// app.use('/secretpath', [middleware.ensureAuthenticated], proxy('/', {
+//     forwardPath: function(req, res) {
+//         return require('url').parse(req.url).path;
+//     }
+// }));
+
+
+/*=====  End of PROXY  ======*/
+
 
 /*===========================================
 =            Baic Authentication            =
@@ -33,7 +47,7 @@ app.use(bodyParser.json());
 =            COR            =
 ===========================*/
 
-app.use(require('cors')());
+// app.use(require('cors')());
 
 /*=====  End of COR  ======*/
 
