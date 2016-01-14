@@ -54,7 +54,7 @@ app.use(bodyParser.json());
 
 app.use(router);
 
-app.use(express.static('dist', __dirname + '/dist'));
+app.use('dist',, express.static(__dirname + '/dist'));
 
 var server = app.listen(port, function() {
 
