@@ -1,5 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ExampleModule from './ExampleModule';
 
 
-React.render(<ExampleModule/>, document.getElementById('react')); 
+ReactDOM.render(<ExampleModule/>, document.getElementById('react')); 
