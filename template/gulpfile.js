@@ -48,8 +48,8 @@ gulp.task('sass_build', function() {
 gulp.task('replaceHTML', function() {
     gulp.src(path.HTML)
         .pipe(htmlreplace({
-            'js': 'build/' + path.MINIFIED_OUT,
-            'css': 'build/' + path.MINIFIED_CSS
+            'js': 'dist/build/' + path.MINIFIED_OUT,
+            'css': 'dist/build/' + path.MINIFIED_CSS
         }))
         .pipe(gulp.dest(path.DEST));
 });
