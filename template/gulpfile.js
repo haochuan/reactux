@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
@@ -13,6 +14,12 @@ var path = {
     HTML: 'src/index.html',
     SASS: 'src/sass/main.scss',
     ALL: ['src/*.js', 'src/**/*.js', 'src/index.html', 'src/sass/**/*.scss'],
+    JS_DEPENDENCIES_SRC: 'src/dependencies/js/*.js',
+    CSS_DEPENDENCIES_SRC: 'src/dependencies/css/*.css',
+    JS_DEPENDENCIES_OUT: 'dependencies.js',
+    CSS_DEPENDENCIES_OUT: 'dependencies.css',
+    DEPENDENCIES_DEST_DEV: 'dist/dev/dependencies/',
+    DEPENDENCIES_DEST_BUILD: 'dist/build/dependencies/',
     MINIFIED_OUT: 'app.min.js',
     MINIFIED_CSS: 'main.css',
     OUT: 'app.js',
@@ -40,6 +47,34 @@ gulp.task('sass_build', function() {
     gulp.src(path.SASS)
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest(path.DEST_BUILD));
+});
+
+gulp.task('js_dependencies_dev', function() {
+    return gulp.src(path.JS_DEPENDENCIES_SRC)
+        .pipe(concat(path.JS_DEPENDENCIES_OUT))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.DEPENDENCIES_DEST_DEV));
+});
+
+gulp.task('js_dependencies_build', function() {
+    return gulp.src(path.JS_DEPENDENCIES_SRC)
+        .pipe(concat(path.JS_DEPENDENCIES_OUT))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.DEPENDENCIES_DEST_BUILD));
+});
+
+gulp.task('css_dependencies_dev', function() {
+    return gulp.src(path.CSS_DEPENDENCIES_SRC)
+        .pipe(concat(path.CSS_DEPENDENCIES_OUT))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.DEPENDENCIES_DEST_DEV));
+});
+
+gulp.task('css_dependencies_build', function() {
+    return gulp.src(path.CSS_DEPENDENCIES_SRC)
+        .pipe(concat(path.CSS_DEPENDENCIES_OUT))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.DEPENDENCIES_DEST_BUILD));
 });
 
 // Replace the src path in <scipt> tag inside index.html
@@ -72,7 +107,7 @@ gulp.task('compile', function() {
 
 // Watch the changes
 gulp.task('watch', function() {
-    gulp.watch(path.ALL, ['sass_dev', 'compile', 'copy']);
+    gulp.watch(path.ALL, ['sass_dev', 'compile', 'js_dependencies_dev', 'css_dependencies_dev', 'copy']);
 });
 
 // Build the min.js for production
@@ -92,4 +127,4 @@ gulp.task('build', function() {
 
 // Register Tasks
 gulp.task('default', ['watch']);
-gulp.task('production', ['replaceHTML', 'sass_build', 'build']);
+gulp.task('production', ['replaceHTML', 'sass_build', 'js_dependencies_build', 'css_dependencies_build','build']);
