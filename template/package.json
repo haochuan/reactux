@@ -1,7 +1,7 @@
 {
   "name": "react-start",
   "version": "1.0.0",
-  "description": "",
+  "description": "react start template src file",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,31 +9,18 @@
   "author": "haochuan",
   "license": "ISC",
   "dependencies": {
-    "babelify": "^6.1.3",
     "body-parser": "^1.12.4",
     "cors": "^2.7.1",
     "events": "^1.0.2",
     "express": "^4.12.3",
     "express-http-proxy": "^0.6.0",
-    "gulp-uglify": "^1.4.2",
     "keymirror": "^0.1.1",
     "morgan": "^1.6.1",
-    "node-basicauth": "0.0.9",
-    "nuclear-js": "^1.1.1",
-    "object-assign": "^2.0.0",
-    "react": "^0.13.3",
-    "vinyl-buffer": "^1.0.0"
+    "node-basicauth": "0.0.9"
   },
   "devDependencies": {
-    "browserify": "^9.0.8",
-    "gulp": "^3.8.11",
-    "gulp-sass": "^2.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-html-replace": "^1.4.4",
-    "gulp-react": "^3.0.1",
-    "gulp-streamify": "0.0.5",
-    "reactify": "^1.1.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.1.0"
+    "babelify": "^6.1.3",
+    "react": "^0.13.3",
+    "webpack": "^2.0.5-beta"
   }
 }
