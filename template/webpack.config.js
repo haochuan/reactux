@@ -1,21 +1,33 @@
-var path = require('path')
-var webpack = require('webpack')
+'use strict';
+
+var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-hot-middleware/client',
-        './src/index'
+        'webpack-hot-middleware/client?reload=true',
+        path.join(__dirname, 'src/index.js')
     ],
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, '/dist/'),
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/'
     },
     plugins: [
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            inject: 'body',
+            filename: 'index.html'
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(), 
+        new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        })
+
     ],
     module: {
         loaders: [
@@ -25,17 +37,28 @@ module.exports = {
                 loader: 'babel',
                 exclude: /node_modules/,
                 include: __dirname
+            },
+            // json
+            {
+                test: /\.json$/,
+                loader: 'json'
+            },
+            // css
+            {
+                test: /\.css$/,
+                loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+            },
+
+            // less
+            { 
+                test: /\.less$/, 
+                loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap' 
+            },
+            // sass
+            { 
+                test: /\.scss$/, 
+                loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' 
             }
-            // // less
-            // { 
-            //     test: /\.less$/, 
-            //     loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap' 
-            // },
-            // // sass
-            // { 
-            //     test: /\.scss$/, 
-            //     loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' 
-            // },
             // // font and svg
             // { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
             // { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
