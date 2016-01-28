@@ -62,6 +62,6 @@ var server = app.listen(port, function() {
 
 
 router.get('/', function (req, res) {
-  res.sendFile('__dirname + '/index.html);
+  res.sendFile(__dirname + '/src/index.html');
 });
 

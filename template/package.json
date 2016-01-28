@@ -4,7 +4,9 @@
   "description": "react start template src file",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
+    "test:watch": "npm test -- --watch"
   },
   "author": "haochuan",
   "license": "ISC",
@@ -32,8 +34,8 @@
     "node-libs-browser": "^0.5.2",
     "react-addons-test-utils": "^0.14.0",
     "react-transform-hmr": "^1.0.0",
+    "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0",
-    "webpack": "^1.9.11"
+    "webpack-hot-middleware": "^2.2.0"
   }
 }
