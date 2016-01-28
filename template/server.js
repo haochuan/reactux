@@ -2,8 +2,17 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+// webpack
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var config = require('./webpack.config');
 
 var port = process.env.PORT || 3000;
+
+var compiler = webpack(config);
+app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+app.use(webpackHotMiddleware(compiler));
 
 var router = express.Router({
     caseSensitive: app.get('case sensitive routing'),
@@ -40,7 +49,7 @@ app.use(require('cors')());
 
 app.use(router);
 
-app.use(express.static('dist'));
+// app.use(express.static('dist'));
 
 var server = app.listen(port, function() {
 
@@ -53,6 +62,6 @@ var server = app.listen(port, function() {
 
 
 router.get('/', function (req, res) {
-  res.sendfile('dist/index.html');
+  res.sendFile('__dirname + '/index.html);
 });
 

@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
         'webpack-hot-middleware/client',
-        './src'
+        './src/index.js'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -27,10 +27,10 @@ module.exports = {
                 include: __dirname
             },
             // json
-            { 
-                test: /\.json$/, 
-                loader: 'json-loader' 
-            },
+            // { 
+            //     test: /\.json$/, 
+            //     loader: 'json-loader' 
+            // },
             // less
             { 
                 test: /\.less$/, 
