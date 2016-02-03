@@ -1,4 +1,7 @@
+import css from '../../style/counter.css';
 import React, { Component, PropTypes } from 'react'
+
+console.log(css);
 
 class Counter extends Component {
   constructor(props) {
@@ -20,7 +23,7 @@ class Counter extends Component {
   render() {
     const { value, onIncrement, onDecrement } = this.props
     return (
-      <p>
+      <p className='counter'>
         Clicked: {value} times
         {' '}
         <button onClick={onIncrement}>
