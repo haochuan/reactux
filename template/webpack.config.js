@@ -3,11 +3,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var precss       = require('precss');
+var atImport = require('postcss-import');
 
 module.exports = {
-    postcss: [autoprefixer, csswring],
     devtool: 'cheap-module-eval-source-map',
     entry: [
         'webpack-hot-middleware/client?reload=true',
@@ -71,6 +69,8 @@ module.exports = {
         ] 
     },
     postcss: function () {
-        return [autoprefixer, precss];
+        atImport({
+            path: ['node_modules', './src']
+        });
     }
 }
