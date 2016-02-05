@@ -3,7 +3,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var atImport = require('postcss-import');
+var autoprefixer      = require('autoprefixer-core');
+var csswring          = require('csswring');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -68,9 +69,5 @@ module.exports = {
             // { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
         ] 
     },
-    postcss: function () {
-        atImport({
-            path: ['node_modules', './src']
-        });
-    }
+    postcss: [autoprefixer, csswring]
 }
