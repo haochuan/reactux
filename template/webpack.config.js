@@ -3,7 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var autoprefixer      = require('autoprefixer-core');
+var autoprefixer      = require('autoprefixer');
 var csswring          = require('csswring');
 
 module.exports = {
