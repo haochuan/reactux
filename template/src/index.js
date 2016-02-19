@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import Counter from './components/Counter';
 import counter from './reducers';
 
-const store = createStore(counter);
+const store = (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)(counter);
 const rootEl = document.getElementById('root');
 
 function render() {
