@@ -4,7 +4,7 @@
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "server.js",
   "scripts": {
-    "test": "",
+    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./src/test/**/*.js",
     "start": "./node_modules/.bin/babel-node server",
     "build": "./node_modules/.bin/rimraf ./build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
@@ -25,6 +25,7 @@
     "redux": "^3.0.6"
   },
   "devDependencies": {
+    "cross-env": "^1.0.7",
     "autoprefixer": "^6.3.1",
     "eslint": "^1.5.0",
     "node-sass": "^3.3.3",
