@@ -1,6 +1,6 @@
 {
   "name": "react-start",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "server.js",
   "scripts": {
