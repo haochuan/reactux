@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./src/test/**/*.js",
     "start": "./node_modules/.bin/babel-node server",
-    "build": "./node_modules/.bin/rimraf ./build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors"
+    "build": "./node_modules/.bin/rimraf ./build && set NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "author": "haochuan",
   "license": "ISC",
