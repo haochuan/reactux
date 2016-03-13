@@ -4,12 +4,12 @@ React Start Template
 Installation
 ------------
 
-    npm install -g reactstart
+    npm install -g startreact
     
 Usage
 ------------
 
-    reactstart [project name]
+    startreact [project name]
     // this will create a folder [project name] contains the template in current directory
 
 About the Template
