@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore';
 import Counter from './containers/Counter';
 import counter from './reducers/reducer';
@@ -10,14 +11,15 @@ const rootEl = document.getElementById('root');
 
 function render() {
   ReactDOM.render(
-    <Counter 
-        value={store.getState()} 
-        onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-        onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-    />,
+    <Provider store = {store}>
+        <Counter 
+            value={store.getState()} 
+            onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+            onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+        />,
+    </Provider>
     rootEl  
   );
 }
 
 render();
-store.subscribe(render);
