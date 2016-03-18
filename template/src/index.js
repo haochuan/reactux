@@ -11,13 +11,13 @@ const rootEl = document.getElementById('root');
 
 function render() {
   ReactDOM.render(
-    <Provider store = {store}>
+    <Provider store={store}>
         <Counter 
             value={store.getState()} 
             onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
             onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-        />,
-    </Provider>
+        />
+    </Provider>,
     rootEl  
   );
 }

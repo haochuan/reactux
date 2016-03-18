@@ -1,5 +1,6 @@
 import './style.css';
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux';
 
 class Counter extends Component {
   constructor(props) {
@@ -50,4 +51,8 @@ Counter.propTypes = {
   onDecrement: PropTypes.func.isRequired
 }
 
-export default Counter
+const mapStateToProps = (state) => ({
+    value: state.counter
+});
+
+export default connect(mapStateToProps)(Counter);
