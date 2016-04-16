@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 class Counter extends Component {
   constructor(props) {
     super(props)
+    this._onIncrement = this._onIncrement.bind(this)
+    this._onDecrement = this._onDecrement.bind(this)
     this.incrementAsync = this.incrementAsync.bind(this)
     this.incrementIfOdd = this.incrementIfOdd.bind(this)
   }
@@ -19,17 +21,25 @@ class Counter extends Component {
     setTimeout(this.props.onIncrement, 1000)
   }
 
+  _onIncrement() {
+    this.props.dispatch({ type: 'INCREMENT' });
+  }
+
+  _onDecrement() {
+    this.props.dispatch({ type: 'DECREMENT' });
+  }
+
   render() {
-    const { value, onIncrement, onDecrement } = this.props
+    const { value } = this.props
     return (
       <p className='haochuan'>
         Clicked: {value} times
         {' '}
-        <button onClick={onIncrement}>
+        <button onClick={this._onIncrement}>
           +
         </button>
         {' '}
-        <button onClick={onDecrement}>
+        <button onClick={this._onDecrement}>
           -
         </button>
         {' '}
@@ -46,9 +56,7 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
+  value: PropTypes.number.isRequired
 }
 
 const mapStateToProps = (state) => ({
