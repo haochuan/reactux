@@ -1,6 +1,6 @@
 {
   "name": "startreact",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
   "scripts": {
