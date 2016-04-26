@@ -86,7 +86,9 @@ const server = app.listen(port, function() {
     let host = server.address().address;
     let port = server.address().port;
 
-    console.log('Server listening at http://%s:%s', host, port);
+    var envString = isProduction ? "Production" : "Development";
+
+    console.log(envString + ' server listening at http://%s:%s', host, port);
 
 });
 
