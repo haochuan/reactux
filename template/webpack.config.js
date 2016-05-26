@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer      = require('autoprefixer');
 var csswring          = require('csswring');
 
@@ -18,6 +19,7 @@ module.exports = {
         publicPath: '/'
     },
     plugins: [
+        new ExtractTextPlugin( "bundle.css" ),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             inject: 'body',
@@ -48,7 +50,7 @@ module.exports = {
             // css
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!postcss-loader"
+                loader:  ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             },
 
             // less

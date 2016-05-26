@@ -57,10 +57,10 @@ module.exports = {
                 test: /\.json$/,
                 loader: 'json'
             },
-            // css
+           // css
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!postcss-loader"
+                loader:  ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             },
 
             // less

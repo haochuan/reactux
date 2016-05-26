@@ -1,6 +1,6 @@
 {
   "name": "startreact",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
   "scripts": {
@@ -22,6 +22,6 @@
   "dependencies": {
     "bluebird": "^3.1.1",
     "commander": "^2.9.0",
-    "fs-extra": "^0.26.3"
+    "fs-extra": "^0.26.4"
   }
 }

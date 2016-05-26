@@ -1,4 +1,4 @@
-import './style.css';
+import style from './style.css';
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -33,7 +33,7 @@ class Counter extends Component {
   render() {
     const { value } = this.props
     return (
-      <p className='haochuan'>
+      <p className={style.haochuan}>
         Clicked: {value} times
         {' '}
         <button onClick={this._onIncrement}>
