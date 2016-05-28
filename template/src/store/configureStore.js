@@ -6,14 +6,19 @@ import createLogger from 'redux-logger';
 const logger = createLogger();
 
 export function configureStore(initialState) {
-    let middlewares = [
-        applyMiddleware(thunk, logger)
-      ];
-    // const store = (window.devToolsExtension ? window.devToolsExtension()(createStore(rootReducer, initialState, applyMiddleware(thunk, logger))) : createStore)(rootReducer, initialState, applyMiddleware(thunk, logger));
-    const store = compose(
-        applyMiddleware(thunk, logger),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
-    )(createStore)(rootReducer, initialState);
+    let store;
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    if (isProduction) {
+        store = compose(
+            applyMiddleware(thunk)
+        )(createStore)(rootReducer, initialState);
+    } else {
+        store = compose(
+            applyMiddleware(thunk, logger),
+            window.devToolsExtension ? window.devToolsExtension() : f => f
+        )(createStore)(rootReducer, initialState);
+    }
 
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
