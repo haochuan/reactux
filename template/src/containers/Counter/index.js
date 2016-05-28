@@ -33,7 +33,7 @@ class Counter extends Component {
   render() {
     const { value } = this.props
     return (
-      <p className={style.haochuan}>
+      <p className="haochuan">
         Clicked: {value} times
         {' '}
         <button onClick={this._onIncrement}>

@@ -23,7 +23,7 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
-        new ExtractTextPlugin('[name]-[hash].min.css'),
+        // new ExtractTextPlugin('[name]-[hash].min.css'),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false,
@@ -57,10 +57,10 @@ module.exports = {
                 test: /\.json$/,
                 loader: 'json'
             },
-           // css
             {
                 test: /\.css$/,
-                loader:  ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+                loader: "style-loader!css-loader!postcss-loader"
+                // loader:  ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             },
 
             // less
