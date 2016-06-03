@@ -1,4 +1,4 @@
-import style from './style.css';
+// import style from './style.css';
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
