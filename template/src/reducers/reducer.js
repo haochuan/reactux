@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import * as ActionTypes from '../constants';
 
-function counter(state = 1, action) {
+export function counter(state = 0, action) {
     switch (action.type) {
         case ActionTypes.INCREMENT:
             return state + 1;

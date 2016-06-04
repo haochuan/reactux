@@ -11,17 +11,18 @@ function setupActions() {
     }
 }
 
-
 test('The init display count should be 0', (it) => {
     const wrapper = shallow(<Counter value={ 0 }/>);
     it.plan(1);
     it.equal(wrapper.find('span').text(), '0');
+    it.end();
 });
 
 test('The counter display should be based on the props value', (it) => {
     const wrapper = shallow(<Counter value={ 10 }/>);
     it.plan(1);
     it.equal(wrapper.find('span').text(), '10');
+    it.end();
 });
 
 // TODO: test the button click event

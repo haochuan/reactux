@@ -1,22 +1,12 @@
-// import expect from 'expect'
-// import counter from '../../reducers'
+import test from 'tape'
+import { counter } from '../../reducers/reducer'
 
-// describe('reducers', () => {
-//   describe('counter', () => {
-//     it('should provide the initial state', () => {
-//       expect(counter(undefined, {})).toBe(0)
-//     })
 
-//     it('should handle INCREMENT action', () => {
-//       expect(counter(1, { type: 'INCREMENT' })).toBe(2)
-//     })
+test('counter reducer', (it) => {
+    it.plan(4);
+    it.equal(counter(undefined, {}), 0, 'The init state should be 0');
+    it.equal(counter(0, {type: 'INCREMENT'}), 1, 'Should handle the increment action');
+    it.equal(counter(1, {type: 'DECREMENT'}), 0, 'Should handle the decrement action');
+    it.equal(counter(1, {type: 'OTHER'}), 1, 'State will not change for other actions');
+});
 
-//     it('should handle DECREMENT action', () => {
-//       expect(counter(1, { type: 'DECREMENT' })).toBe(0)
-//     })
-
-//     it('should ignore unknown actions', () => {
-//       expect(counter(1, { type: 'unknown' })).toBe(1)
-//     })
-//   })
-// })

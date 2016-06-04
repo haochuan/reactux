@@ -4,7 +4,7 @@
   "description": "React + Redux + Hot + Webpack + Express Template",
   "main": "server.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test babel-node ./src/test/**/*.js | tap-spec",
+    "test": "cross-env NODE_ENV=test tape -r babel-register ./src/test/**/*.js | tap-spec",
     "dev": "./node_modules/.bin/babel-node server",
     "production": "NODE_ENV=production ./node_modules/.bin/babel-node server",
     "build": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
