@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class Counter extends Component {
+export class Counter extends Component {
   constructor(props) {
     super(props)
     this._onIncrement = this._onIncrement.bind(this)
@@ -34,7 +34,7 @@ class Counter extends Component {
     const { value } = this.props
     return (
       <p className="haochuan">
-        Clicked: {value} times
+        Clicked: <span>{value}</span> times
         {' '}
         <button onClick={this._onIncrement}>
           +
