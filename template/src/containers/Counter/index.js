@@ -3,61 +3,60 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+
+import Button from '../../components/Button';
+
 export class Counter extends Component {
-  constructor(props) {
-    super(props)
-    this._onIncrement = this._onIncrement.bind(this)
-    this._onDecrement = this._onDecrement.bind(this)
-    this.incrementAsync = this.incrementAsync.bind(this)
-    this.incrementIfOdd = this.incrementIfOdd.bind(this)
-  }
-
-  incrementIfOdd() {
-    if (this.props.value % 2 === 1) {
-      this.props.onIncrement()
+    constructor(props) {
+        super(props)
+        this._onIncrement = this._onIncrement.bind(this)
+        this._onDecrement = this._onDecrement.bind(this)
+        this.incrementAsync = this.incrementAsync.bind(this)
+        this.incrementIfOdd = this.incrementIfOdd.bind(this)
     }
-  }
 
-  incrementAsync() {
-    setTimeout(this.props.onIncrement, 1000)
-  }
+    incrementIfOdd() {
+        if (this.props.value % 2 === 1) {
+            this.props.onIncrement()
+        }
+    }
 
-  _onIncrement() {
-    this.props.dispatch(actions.increment());
-  }
+    incrementAsync() {
+        setTimeout(this.props.onIncrement, 1000)
+     }
 
-  _onDecrement() {
-    this.props.dispatch(actions.decrement());
-  }
+    _onIncrement() {
+        this.props.dispatch(actions.increment());
+    }
 
-  render() {
-    const { value } = this.props
-    return (
-      <p className="haochuan">
-        Clicked: <span>{value}</span> times
-        {' '}
-        <button onClick={this._onIncrement}>
-          +
-        </button>
-        {' '}
-        <button onClick={this._onDecrement}>
-          -
-        </button>
-        {' '}
-        <button onClick={this.incrementIfOdd}>
-          Increment if odd
-        </button>
-        {' '}
-        <button onClick={this.incrementAsync}>
-          Increment async
-        </button>
-      </p>
-    )
-  }
+    _onDecrement() {
+        this.props.dispatch(actions.decrement());
+    }
+
+    render() {
+        const { value } = this.props
+        return (
+            <p className="haochuan">
+                Clicked: <span>{value}</span> times
+                {' '}
+                <Button onClickHandler={this._onIncrement} text="+" />
+                {' '}
+                <Button onClickHandler={this._onDecrement} text="-" />
+                {' '}
+                <button onClick={this.incrementIfOdd}>
+                    Increment if odd
+                </button>
+                {' '}
+                <button onClick={this.incrementAsync}>
+                    Increment async
+                </button>
+            </p>
+        )
+    }
 }
 
 Counter.propTypes = {
-  value: PropTypes.number.isRequired
+    value: PropTypes.number.isRequired
 }
 
 const mapStateToProps = (state) => ({
