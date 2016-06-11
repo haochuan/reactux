@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
-import * as ActionTypes from '../constants';
+import * as ActionTypes from '../constants/actionTypes';
 
-export function counter(state = 0, action) {
+export default function counter(state = 0, action) {
     switch (action.type) {
         case ActionTypes.INCREMENT:
             return state + 1;
@@ -11,10 +10,3 @@ export function counter(state = 0, action) {
             return state;
     }
 }
-
-const reducer = combineReducers({
-    counter
-});
-
-export default reducer;
-

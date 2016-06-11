@@ -1,4 +1,4 @@
-import * as ActionTypes from '../constants';
+import * as ActionTypes from '../constants/actionTypes';
 
 export function increment() {
     // with redux thunk, in actions you have the access to store.dispatch and store.getState
