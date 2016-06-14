@@ -12,3 +12,11 @@ About the Template
 - Built-in Redux dev tools and middlewares 
 - Full webpack setup for dev and production environment, including compiling JSX, different loaders, CSS module, Hot Module Reload, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
+
+Npm scripts in the template
+------------
+
+- `npm run test`: run test
+- `npm run dev`: start the dev server and watch the files changing
+- `npm run production`: run production server
+- `npm run build`: build via webpack
