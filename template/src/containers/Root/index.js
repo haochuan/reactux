@@ -6,7 +6,7 @@ import routes from '../routes';
 
 const Root = ({ store }) => (
     <Provider store={store}>
-        <Router routes={routes} />
+        { routes }
     </Provider>
 );
 
