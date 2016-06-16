@@ -10,8 +10,10 @@ About the Template
 - Reasonable file structure for React and Redux
 - React Router support
 - Built-in Redux dev tools and middlewares 
-- Full webpack setup for dev and production environment, including compiling JSX, different loaders, CSS module, Hot Module Reload, building and deploying
+- Full webpack setup for dev and production environment, including compiling JSX, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
+- Components and Reducer tests Setup with tape and enzyme
+- Nested React Router Setting
 
 Npm scripts in the template
 ------------
