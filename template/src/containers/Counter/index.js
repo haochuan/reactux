@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import { Link } from 'react-router';
 
 
 import Button from '../../components/Button';
@@ -36,6 +37,7 @@ export class Counter extends Component {
     render() {
         const { value } = this.props
         return (
+            <div>
             <p className="haochuan">
                 Clicked: <span>{value}</span> times
                 {' '}
@@ -50,7 +52,11 @@ export class Counter extends Component {
                 <button onClick={this.incrementAsync}>
                     Increment async
                 </button>
+                <Link to="/tabone">tab 1</Link>
+                <Link to="/tabtwo">tab 2</Link>
             </p>
+            this is for tab: {this.props.children}
+            </div>
         )
     }
 }
