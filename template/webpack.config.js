@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var autoprefixer      = require('autoprefixer');
 var csswring          = require('csswring');
 
@@ -25,6 +26,10 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
+        // copy dependencies
+        new CopyWebpackPlugin([
+            { from: 'src/dependencies', to: 'dependencies' }
+        ]),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(), 
         new webpack.NoErrorsPlugin(),

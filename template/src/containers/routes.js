@@ -1,9 +1,9 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import Counter from './Counter';
 
 const routes =  (
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
         <Route name="home" path="/" component={Counter}></Route>
     </Router>  
 );

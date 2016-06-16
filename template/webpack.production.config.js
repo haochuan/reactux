@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 var autoprefixer      = require('autoprefixer');
 var csswring          = require('csswring');
@@ -23,6 +24,10 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
+        // copy dependencies
+        new CopyWebpackPlugin([
+            { from: 'src/dependencies', to: 'dependencies' }
+        ]),
         // new ExtractTextPlugin('[name]-[hash].min.css'),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
