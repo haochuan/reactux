@@ -1,5 +1,5 @@
 {
-  "name": "redact",
+  "name": "reactux",
   "version": "2.0.0",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haochuan/redact.git"
+    "url": "git+https://github.com/haochuan/reactux.git"
   },
   "author": "Haochuan Liu <haochuan.liu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haochuan/redact/issues"
+    "url": "https://github.com/haochuan/reactux/issues"
   },
   "bin": {
-    "redact": "./bin/reactGenerator.js"
+    "reactux": "./bin/reactGenerator.js"
   },
-  "homepage": "https://github.com/haochuan/redact#readme",
+  "homepage": "https://github.com/haochuan/reactux#readme",
   "dependencies": {
     "bluebird": "^3.1.1",
     "commander": "^2.9.0",

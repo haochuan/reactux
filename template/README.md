@@ -1,4 +1,4 @@
-redact
+reactux
 =================
 Ready-to-go template for React + Redux application
 BY _haochuan(haochuan.liu@gmail.com)
