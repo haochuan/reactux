@@ -5,12 +5,12 @@ Ready-to-go template for React + Redux application
 Installation
 ------------
 
-    npm install -g redact
+    npm install -g reactux
     
 Usage
 ------------
 
-    redact [project name]
+    reactux [project name]
     // this will create a folder [project name] contains the template in current directory
 
 About the Template
