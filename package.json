@@ -1,6 +1,6 @@
 {
-  "name": "startreact",
-  "version": "1.8.0",
+  "name": "redact",
+  "version": "2.0.0",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
   "scripts": {
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haochuan/react-start.git"
+    "url": "git+https://github.com/haochuan/redact.git"
   },
   "author": "Haochuan Liu <haochuan.liu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haochuan/react-start/issues"
+    "url": "https://github.com/haochuan/redact/issues"
   },
   "bin": {
-    "startreact": "./bin/reactGenerator.js"
+    "redact": "./bin/reactGenerator.js"
   },
-  "homepage": "https://github.com/haochuan/react-start#readme",
+  "homepage": "https://github.com/haochuan/redact#readme",
   "dependencies": {
     "bluebird": "^3.1.1",
     "commander": "^2.9.0",

@@ -1,15 +1,16 @@
-React Start Template
+redact
 =================
+Ready-to-go template for React + Redux application
 
 Installation
 ------------
 
-    npm install -g startreact
+    npm install -g redact
     
 Usage
 ------------
 
-    startreact [project name]
+    redact [project name]
     // this will create a folder [project name] contains the template in current directory
 
 About the Template

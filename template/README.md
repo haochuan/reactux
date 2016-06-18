@@ -1,6 +1,18 @@
-React + Redux + Hot + Webpack + Express Template 
-------------
+redact
+=================
+Ready-to-go template for React + Redux application
 BY _haochuan(haochuan.liu@gmail.com)
+
+Installation
+------------
+
+    npm install -g redact
+    
+Usage
+------------
+
+    redact [project name]
+    // this will create a folder [project name] contains the template in current directory
 
 About the Template
 ------------
@@ -13,6 +25,7 @@ About the Template
 - Full webpack setup for dev and production environment, including compiling JSX, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
 - Components and Reducer tests Setup with tape and enzyme
+- App store sync with LocalStorage 
 - Nested React Router Setting
 
 Npm scripts in the template
