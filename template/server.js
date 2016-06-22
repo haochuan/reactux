@@ -12,6 +12,13 @@ require('isomorphic-fetch');
 
 const app = express();
 
+const router = express.Router({
+    caseSensitive: app.get('case sensitive routing'),
+    strict       : app.get('strict routing')
+});
+
+app.use(router);
+
 const port = isProduction ? process.env.PORT : 3000;
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -33,13 +40,13 @@ if (!isProduction) {
 
     app.use(webpackMiddleware);
     app.use(webpackHotMiddleware(compiler));
-    app.get('*', function response(req, res) {
+    router.get('*', function response(req, res) {
         res.write(webpackMiddleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
         res.end();
     });
 } else {
     app.use(express.static(__dirname + '/build'));
-    app.get('*', function response(req, res) {
+    router.get('*', function response(req, res) {
         res.sendFile(path.join(__dirname, 'build/index.html'));
     });
 }
