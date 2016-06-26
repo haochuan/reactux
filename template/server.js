@@ -40,13 +40,13 @@ if (!isProduction) {
 
     app.use(webpackMiddleware);
     app.use(webpackHotMiddleware(compiler));
-    router.get('*', function response(req, res) {
+    router.get('/', function response(req, res) {
         res.write(webpackMiddleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
         res.end();
     });
 } else {
     app.use(express.static(__dirname + '/build'));
-    router.get('*', function response(req, res) {
+    router.get('/', function response(req, res) {
         res.sendFile(path.join(__dirname, 'build/index.html'));
     });
 }

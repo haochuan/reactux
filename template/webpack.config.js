@@ -26,6 +26,13 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
+        // common lib
+        new webpack.ProvidePlugin({
+            '$': 'jquery',
+            '_': 'lodash',
+            'Promise': 'bluebird',
+            'fetch': 'whatwg-fetch'
+        }),
         // copy dependencies
         new CopyWebpackPlugin([
             { from: 'src/dependencies', to: 'dependencies' }
