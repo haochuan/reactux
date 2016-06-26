@@ -2,7 +2,7 @@ import test from 'tape'
 import expect from 'expect'
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Counter } from '../../containers/Counter'
+import { Counter } from './'
 
 function setupActions() {
     return {

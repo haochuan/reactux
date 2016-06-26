@@ -1,5 +1,5 @@
 import test from 'tape'
-import counter from '../../reducers/counter'
+import counter from './'
 
 
 test('counter reducer', (it) => {
