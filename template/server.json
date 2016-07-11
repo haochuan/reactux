@@ -1,7 +1,7 @@
 {
     "apps": [{
-        "name": "Example App",
-        "script": "server.js",
+        "name": "App",
+        "script": "prod.js",
         "log_date_format": "YYYY-MM-DD HH:mm Z",
         "env": {
             "NODE_ENV": "production",

@@ -6,26 +6,24 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test tape -r babel-register ./src/**/*spec.js | tap-spec",
     "dev": "./node_modules/.bin/babel-node server",
-    "production": "NODE_ENV=production ./node_modules/.bin/babel-node server",
+    "production": "NODE_ENV=production node prod",
     "build": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "author": "haochuan",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "*",
-    "babel-register": "*",
     "body-parser": "*",
     "cors": "*",
-    "enzyme": "*",
     "es6-promise": "*",
     "events": "*",
     "express": "*",
     "express-http-proxy": "^0.7.2",
     "isomorphic-fetch": "*",
-    "keymirror": "*",
     "lodash": "*",
     "morgan": "*",
-    "node-basicauth": "*",
+    "node-basicauth": "*"
+  },
+  "devDependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "*",
@@ -34,9 +32,10 @@
     "redux-logger": "*",
     "redux-thunk": "^2.1.0",
     "tap-spec": "^4.1.1",
-    "tape": "^4.6.0"
-  },
-  "devDependencies": {
+    "tape": "^4.6.0",
+    "enzyme": "*",
+    "babel-cli": "*",
+    "babel-register": "*",
     "copy-webpack-plugin": "*",
     "autoprefixer": "*",
     "babel-eslint": "*",

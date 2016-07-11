@@ -26,11 +26,24 @@ About the Template
 - Components and Reducer tests Setup with tape and enzyme
 - App store sync with LocalStorage 
 - Nested React Router Setting
+- Deploy with pm2 
 
-Npm scripts in the template
+Development
 ------------
 
-- `npm run test`: run test
-- `npm run dev`: start the dev server and watch the files changing
-- `npm run production`: run production server
-- `npm run build`: build via webpack
+```
+npm install
+npm run dev
+```
+
+- run test: `npm run test`
+
+Production
+------------
+
+```
+npm install --production
+npm run build
+npm run production
+```
+
