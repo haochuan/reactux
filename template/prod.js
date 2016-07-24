@@ -5,8 +5,8 @@ var path = require('path');
 var port = process.env.PORT || 3000;
 
 var router = express.Router({
-    caseSensitive: app.get('case sensitive routing'),
-    strict: app.get('strict routing')
+  caseSensitive: app.get('case sensitive routing'),
+  strict: app.get('strict routing')
 });
 
 // Parse application/json
@@ -39,9 +39,9 @@ var router = express.Router({
 app.use(express.static('build'));
 
 router.get('*', function(req, res) {
-    res.sendFile('index.html');
+  res.sendFile('index.html');
 });
 
 app.listen(port, function () {
-    console.log('App is on port ' + port + '!' );
+  console.log('App is on port ' + port + '!' );
 });

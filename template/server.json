@@ -1,11 +1,11 @@
 {
-    "apps": [{
-        "name": "App",
-        "script": "prod.js",
-        "log_date_format": "YYYY-MM-DD HH:mm Z",
-        "env": {
-            "NODE_ENV": "production",
-            "PORT": 3000
-        }
-    }]
+  "apps": [{
+    "name": "App",
+    "script": "prod.js",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": 3000
+    }
+  }]
 }

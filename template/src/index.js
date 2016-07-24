@@ -8,10 +8,10 @@ const store = configureStore();
 const rootEl = document.getElementById('root');
 
 function render() {
-    ReactDOM.render(
-        <Root store={store} />,
-        rootEl  
-    );
+  ReactDOM.render(
+    <Root store={store} />,
+    rootEl  
+  );
 };
 
 render();

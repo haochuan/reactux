@@ -11,7 +11,7 @@ program
 var pname = program.args[0]
 
 if (!pname) {
-    program.help();
+  program.help();
 } else {
-    gs(pname);
+  gs(pname);
 }

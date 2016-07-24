@@ -13,8 +13,8 @@ require('isomorphic-fetch');
 const app = express();
 
 const router = express.Router({
-    caseSensitive: app.get('case sensitive routing'),
-    strict       : app.get('strict routing')
+	caseSensitive: app.get('case sensitive routing'),
+	strict: app.get('strict routing')
 });
 
 app.use(router);
@@ -24,31 +24,31 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 
 if (!isProduction) {
-    let compiler = webpack(config);
-    let webpackMiddleware = webpackDevMiddleware(compiler, {
-        publicPath: config.output.publicPath,
-        contentBase: 'src',
-        stats: {
-            colors: true,
-            hash: false,
-            timings: true,
-            chunks: false,
-            chunkModules: false,
-            modules: false
-        }
-    });
+	let compiler = webpack(config);
+	let webpackMiddleware = webpackDevMiddleware(compiler, {
+		publicPath: config.output.publicPath,
+		contentBase: 'src',
+		stats: {
+			colors: true,
+			hash: false,
+			timings: true,
+			chunks: false,
+			chunkModules: false,
+			modules: false
+		}
+	});
 
-    app.use(webpackMiddleware);
-    app.use(webpackHotMiddleware(compiler));
-    router.get('/', function response(req, res) {
-        res.write(webpackMiddleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
-        res.end();
-    });
+	app.use(webpackMiddleware);
+	app.use(webpackHotMiddleware(compiler));
+	router.get('/', function response(req, res) {
+		res.write(webpackMiddleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
+		res.end();
+	});
 } else {
-    app.use(express.static(__dirname + '/build'));
-    router.get('/', function response(req, res) {
-        res.sendFile(path.join(__dirname, 'build/index.html'));
-    });
+	app.use(express.static(__dirname + '/build'));
+	router.get('/', function response(req, res) {
+		res.sendFile(path.join(__dirname, 'build/index.html'));
+	});
 }
 
 // var router = express.Router({
@@ -90,12 +90,12 @@ if (!isProduction) {
 
 const server = app.listen(port, function() {
 
-    let host = server.address().address;
-    let port = server.address().port;
+	let host = server.address().address;
+	let port = server.address().port;
 
-    var envString = isProduction ? "Production" : "Development";
+	var envString = isProduction ? "Production" : "Development";
 
-    console.log(envString + ' server listening at http://%s:%s', host, port);
+	console.log(envString + ' server listening at http://%s:%s', host, port);
 
 });
 
@@ -103,4 +103,3 @@ const server = app.listen(port, function() {
 // app.get('/', function (req, res) {
 //   res.sendFile(__dirname + '/src/index.html');
 // });
-
