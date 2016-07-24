@@ -1,6 +1,6 @@
 {
   "name": "reactux",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
   "scripts": {
@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/haochuan/reactux#readme",
   "dependencies": {
-    "bluebird": "^3.1.1",
+    "bluebird": "^3.4.1",
     "commander": "^2.9.0",
-    "fs-extra": "^0.26.4"
+    "fs-extra": "^0.30.0"
   }
 }
