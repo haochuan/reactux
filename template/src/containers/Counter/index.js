@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 import Button from '../../components/Button';
 
-export class Counter extends Component {
+class Counter extends Component {
   constructor(props) {
     super(props)
     this._onIncrement = this._onIncrement.bind(this)

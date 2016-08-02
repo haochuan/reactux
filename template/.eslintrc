@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "max-len": [1, 120, 2, {ignoreComments: true}],
+      "comma-dangle": ["off", "always"],
+      "no-unused-vars": ["off", { "vars": "all", "args": "after-used" }],
+      "import/no-extraneous-dependencies": ["off", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+    }
+}
