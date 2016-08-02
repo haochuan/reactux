@@ -7,7 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 var autoprefixer      = require('autoprefixer');
-var csswring          = require('csswring');
+var precss            = require('precss');
 
 module.exports = {
   entry: [
@@ -88,5 +88,7 @@ output: {
 
     ]
   },
-  postcss: [autoprefixer, csswring]
+  postcss: function () {
+    return [precss, autoprefixer];
+  }
 };

@@ -1,3 +1,5 @@
+$color: gray;
+
 .haochuan {
-    background-color: gray;
+  background-color: $color;
 }

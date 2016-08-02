@@ -5,8 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var precss            = require('precss');
 var autoprefixer      = require('autoprefixer');
-var csswring          = require('csswring');
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
@@ -84,5 +84,7 @@ module.exports = {
 						// { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
 			] 
 	},
-	postcss: [autoprefixer, csswring]
+	postcss: function () {
+    return [precss, autoprefixer];
+  }
 }
