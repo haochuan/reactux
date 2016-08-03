@@ -1,4 +1,4 @@
-import style from './style.css';
+// import './style.css';
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 import Button from '../../components/Button';
 
-class Counter extends Component {
+export class Counter extends Component {
   constructor(props) {
     super(props)
     this._onIncrement = this._onIncrement.bind(this)

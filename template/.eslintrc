@@ -7,6 +7,8 @@
       "max-len": [1, 120, 2, {ignoreComments: true}],
       "comma-dangle": ["off", "always"],
       "no-unused-vars": ["off", { "vars": "all", "args": "after-used" }],
-      "import/no-extraneous-dependencies": ["off", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+      "import/no-extraneous-dependencies": ["off", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
+      "import/no-named-as-default": ["warn", "always"],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }
