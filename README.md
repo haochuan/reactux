@@ -21,9 +21,9 @@ About the Template
 - Reasonable file structure for React and Redux
 - React Router support
 - Built-in Redux dev tools and middlewares 
-- Full webpack setup for dev and production environment, including compiling JSX, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
+- Full webpack setup for dev and production environment, including compiling JSX, eslint, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
-- Components and Reducer tests Setup with tape and enzyme
+- Components and Reducer tests Setup with ava, enzyme and sinon
 - App store sync with LocalStorage 
 - Nested React Router Setting
 - Deploy with pm2 
@@ -37,6 +37,7 @@ npm run dev
 ```
 
 - run test: `npm run test`
+- lint: `npm run lint`
 
 Production
 ------------

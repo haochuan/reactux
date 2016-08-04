@@ -6,7 +6,7 @@ export default function counter(state = 0, action) {
       return state + 1;
     case ActionTypes.DECREMENT:
       return state - 1;
-    default: 
+    default:
       return state;
   }
 }

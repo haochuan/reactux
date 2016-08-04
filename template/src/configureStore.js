@@ -1,12 +1,14 @@
 import { compose, createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
-import { loadState, saveState } from './localStorage';
+// import { loadState, saveState } from './localStorage'; // use localStorage to store state
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import throttle from 'lodash/throttle';
+import rootReducer from './reducers';
 
 const logger = createLogger();
-const persistedState = loadState();
+// use localStorage to store state
+// const persistedState = loadState();
+const persistedState = undefined;
 
 export function configureStore() {
   let store;
@@ -31,13 +33,14 @@ export function configureStore() {
     });
   }
 
+  // use localStorage to store state
   // every time the store changes, update the localstorage
   // throttle: only fire once during every 500 ms
-  store.subscribe(throttle(() => {
-    saveState({
-      counter: store.getState().counter
-    });
-  }, 500));
+  // store.subscribe(throttle(() => {
+  //   saveState({
+  //     counter: store.getState().counter
+  //   });
+  // }, 500));
 
   return store;
 }

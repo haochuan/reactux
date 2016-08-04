@@ -46,6 +46,18 @@ module.exports = {
 
 	],
 	module: {
+		preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ["eslint-loader"],
+        exclude: [
+        	/node_modules/, 
+        	/src\/configureStore.js/,
+        	/src\/containers\/Root\/index.js/
+        ]
+
+      }
+    ],
 		loaders: [
 			// js/jsx
 			{

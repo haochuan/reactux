@@ -10,8 +10,7 @@ const rootEl = document.getElementById('root');
 function render() {
   ReactDOM.render(
     <Root store={store} />,
-    rootEl  
+    rootEl
   );
-};
-
+}
 render();
