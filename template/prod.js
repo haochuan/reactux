@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var favicon = require('serve-favicon');
 var port = process.env.PORT || 3000;
 
 var router = express.Router({
@@ -36,9 +37,10 @@ var router = express.Router({
 
 /*=====  End of COR  ======*/
 
+app.use(favicon(__dirname + "/favicon.ico"));
 app.use(express.static('build'));
 
-router.get('*', function(req, res) {
+router.get('/', function(req, res) {
   res.sendFile('index.html');
 });
 

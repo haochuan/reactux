@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import favicon from 'serve-favicon';
 // webpack
 import path from 'path';
 import webpack from 'webpack';
@@ -17,6 +18,7 @@ const router = express.Router({
 	strict: app.get('strict routing')
 });
 
+app.use(favicon(__dirname + "/favicon.ico"));
 app.use(router);
 
 const port = isProduction ? process.env.PORT : 3000;

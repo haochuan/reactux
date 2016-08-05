@@ -30,7 +30,8 @@
     "lodash": "^4.13.1",
     "morgan": "^1.7.0",
     "node-basicauth": "0.0.9",
-    "normalizr": "^2.2.1"
+    "normalizr": "^2.2.1",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
