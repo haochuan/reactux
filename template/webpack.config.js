@@ -45,6 +45,9 @@ module.exports = {
 		})
 
 	],
+	eslint: {
+    configFile: './.eslintrc'
+  },
 	module: {
 		preLoaders: [
       {

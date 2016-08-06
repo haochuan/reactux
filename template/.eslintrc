@@ -7,6 +7,12 @@
     "plugins": [
         "react"
     ],
+    "settings": {
+      "react": {
+        "pragma": "React",  // Pragma to use, default to "React"
+        "version": "15.3" // React version, default to the latest React stable release
+      }
+    },
     "rules": {
       "max-len": [1, 120, 2, {ignoreComments: true}],
       "no-multiple-empty-lines": [2, {"max": 2, "maxEOF": 2}],

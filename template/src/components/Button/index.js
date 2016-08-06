@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
 const Button = (props) => (
-  <button onClick={this.props.onClickHandler}>{this.props.text}</button>
+  <button onClick={props.onClickHandler}>{props.text}</button>
 );
 
-Button.PropTypes = {
-  onClickHandler: PropTypes.function,
+Button.propTypes = {
+  value: PropTypes.number,
+  onClickHandler: PropTypes.func,
   text: PropTypes.string
 };
 
