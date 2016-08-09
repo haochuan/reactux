@@ -16,8 +16,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: ''
   },
+  watch: true,
   plugins: [
     // new ExtractTextPlugin( "bundle.css" ),
     new HtmlWebpackPlugin({
