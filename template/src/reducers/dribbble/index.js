@@ -1,3 +1,8 @@
+/**
+ *
+ * This is the entry point one reducer
+ *
+ */
 import { STORE_DATA } from '../../constants/actionTypes';
 
 export default function dribbble(state = {}, action) {

@@ -1,3 +1,9 @@
+/**
+ *
+ * localStorage Setup to sync store
+ *
+ */
+
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('state');

@@ -1,3 +1,8 @@
+/**
+ *
+ * This is the entry point one reducer
+ *
+ */
 import * as ActionTypes from '../../constants/actionTypes';
 
 export default function counter(state = 0, action) {

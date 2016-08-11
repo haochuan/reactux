@@ -1,3 +1,9 @@
+/**
+ *
+ * React-Router configuration
+ *
+ */
+
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import Counter from './Counter';

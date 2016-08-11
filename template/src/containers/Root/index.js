@@ -1,3 +1,9 @@
+/**
+ *
+ * Root Container of the react app
+ *
+ */
+
 import React, { Component, PropTypes } from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';

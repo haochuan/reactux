@@ -1,3 +1,9 @@
+/**
+ *
+ * Action creators
+ *
+ */
+
 import * as ActionTypes from '../constants/actionTypes';
 import { fetchData } from '../apis/';
 

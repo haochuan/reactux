@@ -1,3 +1,10 @@
+/**
+ *
+ * Store setup
+ * uncommnet line 9 and 43-50 to enable using localStorage for store
+ *
+ */
+
 import { compose, createStore, applyMiddleware } from 'redux';
 // import { loadState, saveState } from './localStorage'; // use localStorage to store state
 import thunk from 'redux-thunk';

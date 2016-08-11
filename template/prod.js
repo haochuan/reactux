@@ -1,3 +1,10 @@
+/**
+ *
+ * This is the file to run production server without build process
+ * just npm install --production
+ * will reduce the file size and time
+ *
+ */
 
 var express = require('express');
 var app = express();
