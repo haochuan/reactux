@@ -28,10 +28,8 @@ module.exports = {
 		}),
   	// common lib
 		new webpack.ProvidePlugin({
-			'$': 'jquery',
 			'_': 'lodash',
-			'Promise': 'bluebird',
-			'fetch': 'whatwg-fetch'
+			'Promise': 'bluebird'
 		}),
 		// copy dependencies
 		new CopyWebpackPlugin([

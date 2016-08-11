@@ -14,6 +14,10 @@ export class Counter extends Component {
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
   }
 
+  componentDidMount() {
+    this.props.dispatch(actions.storeData());
+  }
+
 
   onIncrement() {
     this.props.dispatch(actions.increment());
