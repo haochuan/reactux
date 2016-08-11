@@ -26,6 +26,7 @@ About the Template
 - Express server with customization and configuration including auth, logger, cor 
 - Components and Reducer tests Setup with [ava](https://github.com/avajs/ava), [enzyme](https://github.com/airbnb/enzyme) and [sinon](http://sinonjs.org/)
 - Ajax calls with [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) and [normalizr](https://github.com/paularmstrong/normalizr)
+- [eslint](http://eslint.org/) built-in with customized configuration
 - App store sync with LocalStorage 
 - Nested React Router Setting
 - Deploy with pm2 

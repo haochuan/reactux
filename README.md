@@ -23,7 +23,9 @@ About the Template
 - Built-in Redux dev tools and middlewares 
 - Full webpack setup for dev and production environment, including compiling JSX, eslint, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
-- Components and Reducer tests Setup with ava, enzyme and sinon
+- Components and Reducer tests Setup with [ava](https://github.com/avajs/ava), [enzyme](https://github.com/airbnb/enzyme) and [sinon](http://sinonjs.org/)
+- Ajax calls with [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) and [normalizr](https://github.com/paularmstrong/normalizr)
+- [eslint](http://eslint.org/) built-in with customized configuration
 - App store sync with LocalStorage 
 - Nested React Router Setting
 - Deploy with pm2 
