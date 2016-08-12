@@ -21,6 +21,7 @@
   "author": "haochuan",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "es6-promise": "^3.2.1",
@@ -60,6 +61,7 @@
     "html-webpack-plugin": "^2.22.0",
     "ignore-styles": "^4.0.0",
     "jscs": "^3.0.7",
+    "jsdom": "^9.4.2",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
