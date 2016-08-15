@@ -5,8 +5,12 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var Dashboard = require('webpack-dashboard');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 var precss            = require('precss');
 var autoprefixer      = require('autoprefixer');
+
+var dashboard = new Dashboard();
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
@@ -40,8 +44,8 @@ module.exports = {
 		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('development')
-		})
-
+		}),
+    new DashboardPlugin(dashboard.setData)
 	],
 	eslint: {
     configFile: './.eslintrc'

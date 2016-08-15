@@ -29,6 +29,7 @@ if (!isProduction) {
 	let compiler = webpack(config);
 	let webpackMiddleware = webpackDevMiddleware(compiler, {
 		publicPath: config.output.publicPath,
+		quite: true,
 		contentBase: 'src',
 		stats: {
 			colors: true,

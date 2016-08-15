@@ -21,7 +21,7 @@ About the Template
 - Reasonable file structure for React and Redux
 - React Router support
 - Built-in Redux dev tools and middlewares 
-- Full webpack setup for dev and production environment, including compiling JSX, eslint, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
+- Full webpack setup with [webpack dashboard](https://github.com/FormidableLabs/webpack-dashboard)for dev and production environment, including compiling JSX, eslint, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
 - Components and Reducer tests Setup with [ava](https://github.com/avajs/ava), [enzyme](https://github.com/airbnb/enzyme) and [sinon](http://sinonjs.org/)
 - Ajax calls with [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) and [normalizr](https://github.com/paularmstrong/normalizr)
