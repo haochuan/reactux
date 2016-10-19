@@ -8,6 +8,7 @@
     "test:watch": "npm test -- --watch",
     "lint": "./node_modules/.bin/eslint ./src/**/*.js",
     "dev": "./node_modules/.bin/babel-node server",
+    "dev-dashboard": "webpack-dashboard -- ./node_modules/.bin/babel-node server",
     "production": "NODE_ENV=production node prod",
     "build": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
@@ -86,7 +87,7 @@
     "stats-webpack-plugin": "^0.4.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dashboard": "0.0.1",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
   }

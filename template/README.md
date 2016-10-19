@@ -37,6 +37,7 @@ Development
 ```
 npm install
 npm run dev
+npm run dev-dashboard // run dev server with webpack-dashboard
 ```
 
 - run test: `npm run test`
