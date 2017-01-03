@@ -1,6 +1,6 @@
 {
   "name": "reactux-template",
-  "version": "1.0.0",
+  "version": "2.5.0",
   "description": "React + Redux + Hot + Webpack + Express Template",
   "main": "server.js",
   "scripts": {
