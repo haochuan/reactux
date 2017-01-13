@@ -11,16 +11,16 @@ var precss            = require('precss');
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'src/index.js')
+    path.join(__dirname, 'frontend/src/index.js')
   ],
 output: {
-    path: path.join(__dirname, '/build/'),
+    path: path.join(__dirname, '/frontend/build/'),
     filename: '[name]-[hash].min.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'frontend/src/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
@@ -31,7 +31,7 @@ output: {
     }),
     // copy dependencies
     new CopyWebpackPlugin([
-      { from: 'src/dependencies', to: 'dependencies' }
+      { from: 'frontend/src/dependencies', to: 'dependencies' }
     ]),
     // new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({

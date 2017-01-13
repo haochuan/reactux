@@ -5,7 +5,6 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
 var precss            = require('precss');
 var autoprefixer      = require('autoprefixer');
 
@@ -13,17 +12,17 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, 'src/index.js')
+    path.join(__dirname, 'frontend/src/index.js')
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
+    path: path.join(__dirname, '/frontend/dist/'),
     filename: 'bundle.js',
     publicPath: '/'
   },
   plugins: [
     // new ExtractTextPlugin( "bundle.css" ),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'frontend/src/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
@@ -34,7 +33,7 @@ module.exports = {
     }),
     // copy dependencies
     new CopyWebpackPlugin([
-      { from: 'src/dependencies', to: 'dependencies' }
+      { from: 'frontend/src/dependencies', to: 'dependencies' }
     ]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(), 
@@ -42,7 +41,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new DashboardPlugin()
   ],
   eslint: {
     configFile: './.eslintrc'
