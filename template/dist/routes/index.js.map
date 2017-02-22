@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../backend/routes/index.js"],"names":["routes"],"mappings":";;;;;AAAA,IAAMA,SAAS,EAAf;;kBAIeA,M","file":"index.js","sourcesContent":["const routes = {\n\n};\n\nexport default routes;"]}
