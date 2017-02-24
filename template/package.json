@@ -8,7 +8,7 @@
     "test-frontend:watch": "npm test-frontend -- --watch",
     "test-backend": "NODE_ENV=test mocha --compilers js:babel-register",
     "lint-frontend": "./node_modules/.bin/eslint ./frontend/src/**/*.js",
-    "lint-backend": "./node_modules/.bin/eslint ./backend/src/**/*.js",
+    "lint-backend": "./node_modules/.bin/eslint ./backend/**/*.js",
     "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node --presets es2015 --ignore frontend/",
     "build-react": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "build-server": "npm run clean && mkdir -p dist && babel backend -s -D -d dist --presets es2015,stage-2",
