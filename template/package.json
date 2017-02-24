@@ -1,6 +1,6 @@
 {
   "name": "reactux-template",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "React + Redux + Hot + Webpack + Express Template",
   "main": "server.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "test-backend": "NODE_ENV=test mocha --compilers js:babel-register",
     "lint-frontend": "./node_modules/.bin/eslint ./frontend/src/**/*.js",
     "lint-backend": "./node_modules/.bin/eslint ./backend/**/*.js",
-    "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node --presets es2015 --ignore frontend/",
+    "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node --presets es2015 --ignore frontend/ --ignore static/",
     "build-react": "./node_modules/.bin/rimraf ./frontend/build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "build-server": "npm run clean && mkdir -p dist && babel backend -s -D -d dist --presets es2015",
     "build-all": "npm run clean && npm run build-react && npm run build-server",
@@ -65,6 +65,7 @@
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "helmet": "^3.4.0",
     "html-webpack-plugin": "^2.22.0",
     "ignore-styles": "^4.0.0",
     "jest": "^16.0.0",

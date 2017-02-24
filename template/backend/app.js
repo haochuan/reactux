@@ -1,7 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
-import morgan from "morgan";
+import logger from "morgan";
 import favicon from "serve-favicon";
+import helmet from "helmet";
 // webpack
 import path from "path";
 import webpack from "webpack";
@@ -13,6 +14,15 @@ import webpackConfig from "../webpack.config";
 import env from "./config/env";
 
 const app = express();
+
+/*==================================
+=            Middleware            =
+==================================*/
+app.use(logger("tiny"));
+app.use(helmet()); // Helmet helps you secure your Express apps by setting various HTTP headers.
+app.use("/static", express.static(path.join(__dirname, "../static"))); // serve static file
+
+/*=====  End of Middleware  ======*/
 
 /*===========================================
 =            Baic Authentication            =
