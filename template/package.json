@@ -4,7 +4,7 @@
   "description": "React + Redux + Hot + Webpack + Express Template",
   "main": "server.js",
   "scripts": {
-    "test-frontend": "jest --verbose --testPathPattern __test__frontend",
+    "test-frontend": "jest --verbose --testPathPattern __test__",
     "test-frontend:watch": "npm test-frontend -- --watch",
     "test-backend": "NODE_ENV=test mocha --compilers js:babel-register",
     "lint-frontend": "./node_modules/.bin/eslint ./frontend/src/**/*.js",
