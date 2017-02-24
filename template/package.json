@@ -10,8 +10,8 @@
     "lint-frontend": "./node_modules/.bin/eslint ./frontend/src/**/*.js",
     "lint-backend": "./node_modules/.bin/eslint ./backend/**/*.js",
     "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node --presets es2015 --ignore frontend/",
-    "build-react": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "build-server": "npm run clean && mkdir -p dist && babel backend -s -D -d dist --presets es2015,stage-2",
+    "build-react": "./node_modules/.bin/rimraf ./frontend/build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build-server": "npm run clean && mkdir -p dist && babel backend -s -D -d dist --presets es2015",
     "build-all": "npm run clean && npm run build-react && npm run build-server",
     "clean": "rm -rf dist",
     "deploy": "npm run build-all && pm2 start server.json"

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var app = require('../app').default;
+var app = require('../dist/app').default;
 var env = require('../dist/config/env').default;
 
 app.set('port', env.port);
