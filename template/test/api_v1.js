@@ -4,32 +4,30 @@
  *
  */
 
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import server from '../server';
+import chai from "chai";
+import chaiHttp from "chai-http";
+import server from "../backend/app";
 
 let should = chai.should();
 chai.use(chaiHttp);
 
 //Our parent block
-describe('Example API test', () => {
-    before((done) => { //Before each test we empty the database
-        Exercise.remove({}, (err) => { 
-           done();         
-        });     
-    });
+describe("Example API test", () => {
+  before(done => {
+    //Before each test we empty the database
+    done();
+  });
   /*
   * Test the /GET /api/exercise
   */
-  describe('GET /api/getInfo', () => {
-    it('it should GET 200 with json', (done) => {
-      chai.request(server)
-      .get('/api/getInfo')
-      .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('json');
-          res.body.message.should.equal('GET INFO');
+  describe("GET /api/v1/info", () => {
+    it("it should GET 200 with json", done => {
+      chai.request(server).get("/api/v1/info").end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("Object");
+        res.body.message.should.equal("GET INFO");
         done();
       });
     });
   });
+});

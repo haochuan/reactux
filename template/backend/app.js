@@ -8,7 +8,7 @@ import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import routes from "./routes";
-import config from "../webpack.config";
+import webpackConfig from "../webpack.config";
 
 import env from "./config/env";
 
@@ -53,21 +53,21 @@ if (env.name === "dev") {
   app.get("/", function response(req, res) {
     res.write(
       webpackMiddleware.fileSystem.readFileSync(
-        path.join(__dirname, "./frontend/dist/index.html")
+        path.join(__dirname, "../frontend/dist/index.html")
       )
     );
     res.end();
   });
 } else if (env.name === "production") {
-  app.use(express.static(path.join(__dirname, "./frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("/", function response(req, res) {
-    res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
+    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
   });
 } else {
   // test here
 }
 
 // Routes
-app.use("/api", routes);
+app.use("/api/v1", routes.api_v1);
 
 export default app;
