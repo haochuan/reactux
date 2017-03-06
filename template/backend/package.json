@@ -6,8 +6,8 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --compilers js:babel-register",
     "lint": "./node_modules/.bin/eslint ./src/**/*.js",
-    "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node --presets es2015",
-    "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist --presets es2015",
+    "dev": "NODE_ENV=dev nodemon bin/www-dev --exec babel-node",
+    "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
     "clean": "rm -rf dist",
     "deploy": "npm run build && pm2 start server.json"
   },
