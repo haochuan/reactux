@@ -6,7 +6,7 @@
 
 import chai from "chai";
 import chaiHttp from "chai-http";
-import server from "../backend/app";
+import server from "../src/app";
 
 let should = chai.should();
 chai.use(chaiHttp);

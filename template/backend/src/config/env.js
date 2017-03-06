@@ -6,15 +6,15 @@
 
 const env = {
   production: {
-    name: "production",
+    name: 'production',
     port: 3000
   },
   dev: {
-    name: "dev",
+    name: 'dev',
     port: 3000
   },
   test: {
-    name: "test",
+    name: 'test',
     port: 3000
   }
 };

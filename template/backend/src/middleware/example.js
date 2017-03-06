@@ -6,6 +6,5 @@
  */
 
 export default function(req, res, next) {
-  console.log(req.ip);
   next();
 }

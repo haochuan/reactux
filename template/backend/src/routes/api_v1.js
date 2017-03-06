@@ -4,15 +4,15 @@
  *
  */
 
-import { Router } from "express";
+import { Router } from 'express';
 
 const router = Router();
 
-router.route("/info").get(getInfo);
+router.route('/info').get(getInfo);
 
 function getInfo(req, res) {
   res.status(200).json({
-    message: "GET INFO"
+    message: 'GET INFO'
   });
 }
 
