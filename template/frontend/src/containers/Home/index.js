@@ -12,7 +12,9 @@ export class Home extends Component {
     return (
       <div>
         This is the home page route.
-        <Button type="primary">Primary</Button>
+        <div>
+          <Button type="primary">Login</Button>
+        </div>
       </div>
     );
   }

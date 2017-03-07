@@ -3,11 +3,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
 
 module.exports = {
   entry: [path.join(__dirname, 'src/index.js')],
@@ -16,13 +13,11 @@ module.exports = {
     filename: '[name]-[hash].min.js'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
-    // new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -38,46 +33,29 @@ module.exports = {
     })
   ],
   module: {
-    // preLoaders: [{
-    //     test: /\.js$/,
-    //     exclude: /node_modules/,
-    //     loader: 'eslint'
-    // }],
-    loaders: [
+    rules: [
       // js/jsx
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        use: {
+          loader: 'babel-loader',
+          query: {
+            plugins: [['import', { libraryName: 'antd', style: 'css' }]]
+          }
+        },
         exclude: /node_modules/,
-        include: __dirname,
-        query: {
-          plugins: [['import', { libraryName: 'antd', style: 'css' }]]
-        }
+        include: __dirname
       },
-      // json
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
+      // css
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader'
-        // loader:  ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
-      },
-
-      // less
-      {
-        test: /\.less$/,
-        loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap'
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       // sass
       {
         test: /\.scss$/,
-        loader: 'style!css!postcss!sass'
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
-  },
-  postcss: function() {
-    return [precss, autoprefixer];
   }
 };

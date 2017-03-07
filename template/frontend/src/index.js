@@ -7,7 +7,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from './configureStore';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 
 import App from './containers/App';
@@ -25,7 +25,7 @@ function render() {
     <Provider store={store}>
       <Router history={browserHistory}>
         <Route path="/" component={App}>
-          <indexRoute component={Home} />
+          <IndexRoute component={Home} />
           <Route path="signup" component={Signup} />
           <Route path="login" component={Login} />
           <Route path="notFound" component={NotFound} />
