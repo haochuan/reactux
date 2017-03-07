@@ -10,21 +10,15 @@ require('isomorphic-fetch');
 
 var app = express();
 
-var router = express.Router({
-  caseSensitive: app.get('case sensitive routing'),
-  strict: app.get('strict routing')
-});
-
 app.use(compression());
 app.use(favicon(__dirname + '/favicon.ico'));
-app.use(router);
 
 var port = isProduction ? process.env.PORT : 3000;
 var isProduction = process.env.NODE_ENV === 'production';
 
-app.use(express.static(__dirname + '/build'));
-router.get('*', function response(req, res) {
-  res.sendFile(path.join(__dirname, 'build/index.html'));
+app.use(express.static(path.join(__dirname, '/build')));
+app.get('*', function response(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 /*===========================================

@@ -8,7 +8,7 @@
     "test:watch": "npm test -- --watch",
     "lint": "./node_modules/.bin/eslint ./src/**/*.js",
     "dev": "webpack-dev-server  --inline --hot --content-base dist/ --history-api-fallback",
-    "prod": "NODE_ENV=production node server.js",
+    "prod": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors && NODE_ENV=production node server.js",
     "build": "./node_modules/.bin/rimraf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "deploy": "npm run build && pm2 start server.json"
   },

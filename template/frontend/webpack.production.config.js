@@ -7,10 +7,11 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
-  entry: [path.join(__dirname, 'src/index.js')],
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'build/'),
-    filename: '[name]-[hash].min.js'
+    path: 'build',
+    filename: '[name]-[hash].min.js',
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
