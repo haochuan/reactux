@@ -4,26 +4,32 @@
  *
  */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { configureStore } from "./configureStore";
-import { Router, Route, hashHistory } from "react-router";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { configureStore } from './configureStore';
+import { Router, Route, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
-import Counter from "./containers/Counter";
-import TabOne from "./components/TabOne";
-import TabTwo from "./components/TabTwo";
+import App from './containers/App';
+import Dashboard from './containers/Dashboard';
+import Login from './containers/Login';
+import Signup from './containers/Signup';
+import Home from './containers/Home';
+import NotFound from './containers/NotFound';
 
 const store = configureStore();
-const rootEl = document.getElementById("root");
+const rootEl = document.getElementById('root');
 
 function render() {
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={hashHistory}>
-        <Route name="home" path="/" component={Counter}>
-          <Route path="tabone" component={TabOne} />
-          <Route path="tabtwo" component={TabTwo} />
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <indexRoute component={Home} />
+          <Route path="signup" component={Signup} />
+          <Route path="login" component={Login} />
+          <Route path="notFound" component={NotFound} />
+          <Route path="dashboard" component={Dashboard} />
         </Route>
       </Router>
     </Provider>,

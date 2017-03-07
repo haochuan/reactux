@@ -55,7 +55,10 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
-        include: __dirname
+        include: __dirname,
+        query: {
+          plugins: [['import', { libraryName: 'antd', style: 'css' }]]
+        }
       },
       // json
       {
