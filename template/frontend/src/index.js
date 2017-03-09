@@ -16,6 +16,7 @@ import Login from './containers/Login';
 import Signup from './containers/Signup';
 import Home from './containers/Home';
 import NotFound from './containers/NotFound';
+import RequireAuth from './containers/RequireAuth';
 
 const store = configureStore();
 const rootEl = document.getElementById('root');
@@ -29,7 +30,7 @@ function render() {
           <Route path="signup" component={Signup} />
           <Route path="login" component={Login} />
           <Route path="notFound" component={NotFound} />
-          <Route path="dashboard" component={Dashboard} />
+          <Route path="dashboard" component={RequireAuth(Dashboard)} />
         </Route>
       </Router>
     </Provider>,
