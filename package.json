@@ -1,6 +1,6 @@
 {
   "name": "reactux",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "React + Redux + Hot + Webpack + Express Template Generator",
   "main": "",
   "scripts": {

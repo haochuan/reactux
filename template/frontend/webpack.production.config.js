@@ -50,12 +50,18 @@ module.exports = {
       // css
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      },
-      // sass
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [require('precss'), require('autoprefixer')];
+              }
+            }
+          }
+        ]
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "name": "reactux-frontend",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "React + Redux + Hot + Webpack + Express Template",
   "main": "server.js",
   "scripts": {
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "antd": "^2.8.0",
+    "autoprefixer": "^6.7.7",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
@@ -58,8 +59,8 @@
     "html-webpack-plugin": "^2.22.0",
     "jest": "^16.0.0",
     "jsdom": "^9.4.2",
-    "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
     "react-dom": "^15.3.0",
@@ -70,7 +71,6 @@
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
     "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.0",
     "stats-webpack-plugin": "^0.4.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
