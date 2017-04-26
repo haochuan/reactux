@@ -1,7 +1,7 @@
 var jwt = require('jsonwebtoken');
 
 var SECRET = 'This is a secret';
-var EXPIRE_DURATION = 10; // expiration duration for the token
+var EXPIRE_DURATION = '20s'; // expiration duration for the token
 
 var auth = {
   login: function(req, res) {
@@ -40,7 +40,7 @@ var auth = {
             username: decoded.username,
             password: decoded.password
           };
-          jst.sign(payload, SECRET, { expiresIn: EXPIRE_DURATION }, function(
+          jwt.sign(payload, SECRET, { expiresIn: EXPIRE_DURATION }, function(
             err,
             token
           ) {
