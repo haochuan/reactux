@@ -5,7 +5,10 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    path.join(__dirname, 'src/index.js')
+  ],
   output: {
     path: '/dist',
     filename: 'bundle.js',
@@ -17,6 +20,7 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')

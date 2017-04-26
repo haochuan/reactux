@@ -1,16 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import LoginFrom from '../../components/LoginForm';
 import './style.css';
 
 export class Login extends Component {
   constructor(props) {
     super(props);
   }
+  submitLogin(username, password) {
+    console.log(username, password);
+  }
+
   render() {
     const { value } = this.props;
     return (
       <div>
-        This is the Login page route.
+        <LoginFrom submitLoginHandler={this.submitLogin} />
       </div>
     );
   }
