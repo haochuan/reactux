@@ -11,6 +11,7 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var webpackConfig = require('./webpack.config');
 var historyApiFallback = require('connect-history-api-fallback');
 var app = express();
+var routes = require('./routes');
 
 app.use(compression());
 app.use(morgan('tiny'));
@@ -93,6 +94,8 @@ const server = app.listen(port, function() {
 
   console.log(envString + ' server listening at http://%s:%s', host, port);
 });
+
+app.use('/', routes);
 
 // app.get('/', function (req, res) {
 //   res.sendFile(__dirname + '/src/index.html');

@@ -25,11 +25,12 @@
     "es6-promise": "^3.2.1",
     "express": "^4.14.0",
     "express-http-proxy": "^0.7.4",
+    "helmet": "^3.4.0",
+    "jsonwebtoken": "^7.4.0",
     "lodash": "^4.14.1",
     "morgan": "^1.7.0",
     "normalizr": "^2.2.1",
-    "serve-favicon": "^2.3.0",
-    "helmet": "^3.4.0"
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "antd": "^2.8.0",
