@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import LoginFrom from '../../components/LoginForm';
+import { login } from '../../actions/auth';
 import './style.css';
 
 export class Login extends Component {
@@ -8,7 +9,7 @@ export class Login extends Component {
     super(props);
   }
   submitLogin(username, password) {
-    console.log(username, password);
+    login(username, password);
   }
 
   render() {
