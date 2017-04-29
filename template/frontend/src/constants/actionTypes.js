@@ -4,8 +4,5 @@
  *
  */
 
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const STORE_DATA = 'STORE_DATA';
-
-
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const SEND_NOTIFICATION = 'SEND_NOTIFICATION';

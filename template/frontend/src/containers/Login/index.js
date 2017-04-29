@@ -7,9 +7,10 @@ import './style.css';
 export class Login extends Component {
   constructor(props) {
     super(props);
+    this.submitLogin = this.submitLogin.bind(this);
   }
   submitLogin(username, password) {
-    login(username, password);
+    this.props.dispatch(login(username, password));
   }
 
   render() {

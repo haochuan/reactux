@@ -5,5 +5,6 @@
  */
 
 import auth from './auth';
+import notification from './nofification';
 
-export { auth };
+export { auth, notification };

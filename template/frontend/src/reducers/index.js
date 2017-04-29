@@ -5,14 +5,10 @@
  */
 
 import { combineReducers } from 'redux';
-import counter from './counter';
-import dribbble from './dribbble';
-
+import authReducer from './auth';
 
 const reducer = combineReducers({
-  counter,
-  dribbble
+  authReducer
 });
 
 export default reducer;
-
