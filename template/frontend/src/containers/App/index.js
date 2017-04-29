@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import Notification from '../../components/Notification';
 import './style.css';
 
 export class App extends Component {
@@ -10,6 +11,7 @@ export class App extends Component {
     const { value } = this.props;
     return (
       <div className="app">
+        <Notification notification={this.props.notification} />
         <div className="app-header" />
         <div className="app-container">
           {this.props.children}
@@ -20,6 +22,8 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  notification: state.notification
+});
 
 export default connect(mapStateToProps)(App);

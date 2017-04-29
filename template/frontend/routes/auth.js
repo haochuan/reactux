@@ -5,6 +5,7 @@ var EXPIRE_DURATION = '20s'; // expiration duration for the token
 
 var auth = {
   login: function(req, res) {
+    console.log(req.body);
     var username = req.body.username;
     var password = req.body.password;
     var payload = {
@@ -13,6 +14,7 @@ var auth = {
     };
 
     // hardcoded auth account
+    console.log(username, password);
     if (username === 'test' && password === 'test') {
       jwt.sign(payload, SECRET, { expiresIn: EXPIRE_DURATION }, function(
         err,

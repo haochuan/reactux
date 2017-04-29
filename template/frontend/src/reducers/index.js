@@ -5,10 +5,12 @@
  */
 
 import { combineReducers } from 'redux';
-import authReducer from './auth';
+import auth from './auth';
+import notification from './notification';
 
 const reducer = combineReducers({
-  authReducer
+  auth,
+  notification
 });
 
 export default reducer;

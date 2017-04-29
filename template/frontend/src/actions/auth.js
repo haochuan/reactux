@@ -6,9 +6,10 @@ export function login(username, password) {
   return (dispatch, getState) => {
     fetch('/auth/login', {
       method: 'POST',
-      body: { username: username, password: password }
+      body: JSON.stringify({ username: username, password: password })
     })
       .then(response => {
+        console.log(response);
         if (response.ok) {
           // login successfult
           dispatch(loginSuccess());
@@ -29,7 +30,7 @@ function loginSuccess() {
     dispatch({
       type: ActionTypes.LOGIN_SUCCESS
     });
-    dispatch(notify('Login Successfully', 'info'));
+    dispatch(notify('Login Successfully', 'success'));
   };
 }
 
