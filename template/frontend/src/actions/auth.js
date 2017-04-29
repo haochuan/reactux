@@ -6,6 +6,9 @@ export function login(username, password) {
   return (dispatch, getState) => {
     fetch('/auth/login', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({ username: username, password: password })
     })
       .then(response => {
