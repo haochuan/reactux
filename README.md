@@ -28,6 +28,38 @@ Template Features
 - Option to sync Redux store with LocalStorage 
 - Deploy with pm2 
 
+Project Stucture
+------------
+
+#### Frontend
+- /src/react
+  - action              -> action creators in redux
+  - components          -> reusable components
+  - constants           -> const 
+  - containers          -> parent components
+  - reducers            -> redux reducers
+  - configureStore.js   -> redux store setup
+  - index.html          -> html template
+  - index.js            -> entry point
+  - localStorage.js     -> setup sync between redux store and localStorage
+  
+
+
+#### Backend
+- /src/server
+  - config              -> server config like environment and database
+  - middleware          -> custom express middleware
+  - models              -> model used in database
+  - routes              -> routes setup
+  - app.js              -> main server app
+  - index.js            -> entry point
+  
+#### Run Dev Server
+webpack will move and compile `src/react` into `dist/react` and use `babel-node` to run express server
+
+#### Run Production Server
+webpack will move and compile `src/react` and `src/server` into `build/react` and `build/server` and use `node` to run express server
+
 Development
 ------------
 
