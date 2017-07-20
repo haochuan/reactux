@@ -1,6 +1,6 @@
 {
   "name": "reactux",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "React + Redux + HOC + Webpack + Express Template",
   "scripts": {
     "test": "jest --verbose",
@@ -56,9 +56,11 @@
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
+    "react-markdown": "^2.5.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-transform-hmr": "^1.0.4",
