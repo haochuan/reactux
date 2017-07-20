@@ -5,6 +5,7 @@ import favicon from 'serve-favicon';
 import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
+import historyApiFallback from 'connect-history-api-fallback';
 
 // webpack
 import webpack from 'webpack';
@@ -51,6 +52,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/v1', routes.api_v1);
 app.use('/page', routes.page);
 
+app.use(
+  historyApiFallback({
+    verbose: false
+  })
+);
+
 // Load React App
 if (env.name === 'production') {
   app.use(express.static(path.resolve(__dirname, '../', 'react')));
@@ -80,7 +87,7 @@ if (env.name === 'production') {
   app.get('*', function response(req, res) {
     res.write(
       webpackMiddleware.fileSystem.readFileSync(
-        path.join(__dirname, './dist/index.html')
+        path.resolve(__dirname, '../', 'react', 'index.html')
       )
     );
     res.end();

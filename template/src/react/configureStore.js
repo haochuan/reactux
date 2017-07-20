@@ -8,7 +8,7 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 // import { loadState, saveState } from './localStorage'; // use localStorage to store state
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import throttle from 'lodash/throttle';
 import rootReducer from './reducers';
 
@@ -22,9 +22,10 @@ export function configureStore() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   if (isProduction) {
-    store = compose(
-      applyMiddleware(thunk)
-    )(createStore)(rootReducer, persistedState);
+    store = compose(applyMiddleware(thunk))(createStore)(
+      rootReducer,
+      persistedState
+    );
   } else {
     store = compose(
       applyMiddleware(thunk, logger),

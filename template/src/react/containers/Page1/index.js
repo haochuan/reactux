@@ -2,15 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import './style.css';
 
-export class Dashboard extends Component {
+export class Page1 extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { value } = this.props;
     return (
       <div>
-        This is the Dashboard page route.
+        This is Page 1
       </div>
     );
   }
@@ -18,4 +17,4 @@ export class Dashboard extends Component {
 
 const mapStateToProps = state => ({});
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(Page1);

@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: './src/react/index.js',
@@ -23,15 +24,17 @@ module.exports = {
       filename: 'index.html'
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
+      compress: {
         screw_ie8: true
-      }
+      },
+      comments: false
     }),
-    new StatsPlugin('webpack.stats.json', {
-      source: false,
-      modules: false
-    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
     // remove locale from moment.js
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
@@ -46,8 +49,7 @@ module.exports = {
             plugins: [['import', { libraryName: 'antd', style: 'css' }]]
           }
         },
-        exclude: /node_modules/,
-        include: __dirname
+        exclude: /node_modules/
       },
       // css
       {

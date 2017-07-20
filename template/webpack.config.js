@@ -25,6 +25,7 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
+    new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     // remove locale from moment.js
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
@@ -40,8 +41,7 @@ module.exports = {
             plugins: [['import', { libraryName: 'antd', style: 'css' }]]
           }
         },
-        exclude: /node_modules/,
-        include: __dirname
+        exclude: /node_modules/
       },
       // css
       {
