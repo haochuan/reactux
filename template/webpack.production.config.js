@@ -4,7 +4,6 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
