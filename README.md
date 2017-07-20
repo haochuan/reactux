@@ -1,6 +1,6 @@
 reactux
 =================
-Ready-to-go template for React + Redux application
+Ready-to-go template for React + Redux + Express App
 
 Installation
 ------------
@@ -13,41 +13,59 @@ Usage
     reactux [project name]
     // this will create a folder [project name] contains the template in current directory
 
-About the Template
+Template Features
 ------------
 
 - CLI to generate start files
 - Fully support ES6 
-- Reasonable file structure for React and Redux
-- React Router support
+- Dev and Production environment setting
+- Reasonable file structure for both Frontend and Backend
+- React Router v4 support
 - Built-in Redux dev tools and middlewares 
-- Full webpack setup with [webpack dashboard](https://github.com/FormidableLabs/webpack-dashboard)for dev and production environment, including compiling JSX, eslint, different loaders, CSS module, Hot Module Reload, copying dependencies, building and deploying
 - Express server with customization and configuration including auth, logger, cor 
-- Components and Reducer tests Setup with [ava](https://github.com/avajs/ava), [enzyme](https://github.com/airbnb/enzyme) and [sinon](http://sinonjs.org/)
-- Ajax calls with [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) and [normalizr](https://github.com/paularmstrong/normalizr)
+- Tests Setup with [Jest](https://facebook.github.io/jest/)
 - [eslint](http://eslint.org/) built-in with customized configuration
-- App store sync with LocalStorage 
-- Nested React Router Setting
+- Option to sync Redux store with LocalStorage 
 - Deploy with pm2 
 
 Development
 ------------
 
 ```
-npm install
-npm run dev
-npm run dev-dashboard // run dev server with webpack-dashboard
+cd [your project]
+yarn install // or npm install
+yarn dev // or npm run dev
 ```
 
-- run test: `npm run test`
-- lint: `npm run lint`
+Test
+------------
+
+```
+yarn test // or npm run test
+```
+
+Linting
+------------
+
+```
+yarn lint // or npm run lin
+```
 
 Production
 ------------
 
 ```
-npm install --production
-npm run build
-npm run production
+yarn install
+yarn production
 ```
 
+Deploy with [PM2](https://github.com/Unitech/pm2)
+------------
+
+```
+yarn install
+yarn production
+```
+
+## License
+Copyright (c) 2017 Haochuan Licensed under the MIT license.
