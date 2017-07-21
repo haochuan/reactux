@@ -19,6 +19,7 @@ Template Features
 - CLI to generate start files
 - Fully support ES6 
 - Dev and Production environment setting
+- Bundle with webpack 2 with js, css, postcss, and file loaders 
 - Reasonable file structure for both Frontend and Backend
 - React Router v4 support
 - Built-in Redux dev tools and middlewares 
