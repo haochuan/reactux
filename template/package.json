@@ -1,6 +1,6 @@
 {
   "name": "reactux",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "React + Redux + HOC + Webpack + Express Template",
   "scripts": {
     "test": "jest --verbose",
